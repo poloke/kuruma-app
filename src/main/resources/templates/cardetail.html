@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+	<link th:href="@{/css/style.css}" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+	
+<title>Car Details</title>
+</head>
+<body>
+	<div th:replace="fragment/general.html :: nav"></div>
+	<div id="content">
+	
+	<h2 th:text="${carD.model}"></h2>
+	<hr>  
+	
+	<div class="container-fluid">
+	<div class="row">
+	<div class="col-xl-5">	
+	 	<img th:src="@{${carD.imgLink}}" width="250" height="120" style="margin-left: 50px;"/>
+	</div>
+	<div class="col-m-4">	
+		<table>
+		<tr>
+			<td style ="padding-right: 18px;">Brand</td>
+			<td> <span th:text="${carD.brand}"></td> 
+		</tr>
+		<tr>
+			<td>Model</td>
+			<td> <span th:text="${carD.model}"></td>
+		</tr>
+		<tr>
+			<td>Price</td>
+			<td> <span th:text="${carD.price}"></td> 
+		</tr>
+		<tr>
+			<td>Link</td>
+			<td><a th:href="@{${carD.link}}" target="_blank" rel="noopener noreferrer"> Link to car listing </a></td>
+		</tr>
+	 
+	 
+	</table>
+	</div>
+	</div>
+	</div>
+	</div>
+
+	<footer th:replace="fragment/footer.html :: footer"></footer>
+</body>
+</html>
+</body>
+

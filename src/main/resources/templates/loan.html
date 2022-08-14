@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">	
+	<link th:href="@{/css/style.css}" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+	<script type="text/javascript" th:src="@{webjars/jquery/jquery.min.js}"></script>
+	<script type="text/javascript" th:src="@{webjars/bootstrap/js/bootstrap.min.js}"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<title>Car Loan Calculator</title>		
+	<script type="text/javascript" src="/js/loan.js"></script>			
+	</head>
+	<body>
+	<div th:replace="fragment/general.html :: nav"></div>
+	<div id="content">
+		<h2>Car Loan Calculator<hr style="height:2px;border-width:0;color:gray;background-color:gray;width:80%"></h2>
+		
+	<div class="container-fluid">
+	<div class="row">
+		<div class="col-xl-6">			
+			<div class="mb-3">
+				<label for="principal" class="form-label"><b>Car Loan Amount(SGD) :</b></label>
+				<input type="text" class="form-control" id="carLoan" placeholder="eg. 100000"/>
+			</div>
+			<div class="mb-3">
+				<label for="interest" class="form-label"><b>Interest Rate (%) :</b></label>
+				<input type="text" id="interest" class="form-control" placeholder="eg. 2.3"/>
+			</div>
+			<div class="mb-3">
+				<label for="years" class="form-label"><b>Loan Term (Years) :</b></label>
+				<input type="text" id="years" class="form-control" placeholder="eg. 5"/>
+			</div>
+		
+		
+				<input type="button" value="Calculate" onclick="getValues()" />	
+			</div>						
+			
+		
+		
+		<div class="col-xl-6">
+		
+		
+		<div class="mb-3" style="margin-left: 25px; margin-top: 60px;">
+			<fieldset>
+			<h2>Monthly commitment</h2>
+		</div>
+		<div class="mb-3">
+				<h5><div id="Result" style="margin-left: 70px;"></div></h5>
+			</fieldset>		
+		</div>				
+		
+		</div>
+	</div>
+	</div>	
+	</div>
+		<footer th:replace="fragment/footer.html :: footer"></footer>
+	</body>
+</html>
